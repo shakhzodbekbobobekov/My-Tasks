@@ -4,5 +4,13 @@ import React from "react"
 
 
 ReactDOM.render(
-    React.createElement('div', '', 'hello', React.createElement( 'span', {}, 'ichma ich' ))
+    <div className="container"> 
+        <h1>Hello guys!</h1>
+        <div className="box">
+            <p>
+                tushunarli text endi BablesJS bn
+            </p>
+        </div>
+
+    </div>
     , document.getElementById('root'))
