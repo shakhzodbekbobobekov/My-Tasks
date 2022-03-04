@@ -5,6 +5,6 @@ import React from "react"
 
 ReactDOM.render( 
     <div className="bag">
-        <p>Hello world</p>
+        <p>Hello worldd</p>
     </div>
     , document.getElementById('root'))
