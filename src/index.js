@@ -3,8 +3,6 @@ import React from "react"
 
 
 
-ReactDOM.render( 
-    <div className="bag">
-        <p> my first React web site 😎✌</p>
-    </div>
+ReactDOM.render(
+    React.createElement('div', '', 'hello', React.createElement( 'span', {}, 'ichma ich' ))
     , document.getElementById('root'))
