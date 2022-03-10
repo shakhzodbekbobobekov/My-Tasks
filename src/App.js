@@ -1,30 +1,24 @@
 import React from "react";
 
+
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            MaxsulotTuri: 'Temir',
-            Sifat: "Yangi",
-            Narxi: '50$'
-        };
+            count: 0,
+        }
     }
 
-    changeNames = () => {
-        this.setState({
-            MaxsulotTuri: 'Taxta',
-            Sifat: "Eskiroq",
-            Narxi: '20$',
-        });
+    addOne = () => {
+        this.setState(({ count: this.state.count + 1 }), () => console.log('qushildi'));
     }
 
     render() {
         return (
             <div>
-                <p>MaxsulotTuri: {this.state.MaxsulotTuri} </p>
-                <p>Sifat: {this.state.Sifat}</p>
-                <p>Narxi: {this.state.Narxi}</p>
-                <button onClick={this.changeNames} > uzgar </button>
+                <h1>Cunter: {this.state.count} </h1>
+                <button onClick={this.addOne} > click++ </button>
+                <button> click-- </button>
             </div>
         )
     }
