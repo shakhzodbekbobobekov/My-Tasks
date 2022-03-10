@@ -7,3 +7,10 @@
 body {
     font-family: monospace;
 }
+
+button {
+    border: none;
+    background-color: aqua;
+    color: #fff;
+    font-size: 10rem;
+}
