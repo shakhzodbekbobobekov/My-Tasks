@@ -1,10 +1,10 @@
 import React from "react";
-import Trips from "./components/Trips";
+// import Trips from "./components/Trips";
 
 const App = () => {
     return (
         <div>
-           <Trips />
+         <h1>Hi React !</h1>
         </div>
     )
 }
