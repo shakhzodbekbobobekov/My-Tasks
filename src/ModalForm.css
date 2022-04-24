@@ -1,0 +1,19 @@
+.new-event-form label,
+.new-event-form input {
+  display: block;
+  text-align: left;
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+    background-color: aqua;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+}
