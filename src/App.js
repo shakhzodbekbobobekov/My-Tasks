@@ -1,13 +1,12 @@
-import React from "react";
-// import Trips from "./components/Trips";
 
-const App = () => {
-    return (
-        <div>
-         <h1>Hi React !</h1>
-        </div>
-    )
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hi</h1>
+    </div>
+  );
 }
 
-
-export default App 
+export default App;
