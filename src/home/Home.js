@@ -3,10 +3,13 @@ import RicipeList from '../components/RicipeList'
 import {useFetch} from '../components/hooks/useFetch'
 
 function Home() {
-  const {data, isPending, error} = useFetch('http://localhost:3000/recipes')
+  const { data, isPending, error } = useFetch('http://localhost:3000/recipes')
+  console.log(data);
   return (
     <div className='home'>
-      <RicipeList data={data} />
+      {isPending && <div>Loading....</div>}
+      { error && <div>{error }</div>}
+      <RicipeList data={data} /> 
     </div>
   )
 }

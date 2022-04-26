@@ -7,10 +7,10 @@ function Navbar() {
   return (
     <div className='navbar'>
       <nav>
-        <Link className='brand'>
+        <Link to='/' className='brand'>
           <h1>RATATOUILLE</h1>
         </Link>
-        <Link to='/'>Read More</Link>
+        <Link to='/create'>Now create</Link>
       </nav>
     </div>
   )
