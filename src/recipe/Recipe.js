@@ -5,10 +5,11 @@ import './Recipe.css'
 function Recipe() {
   const {id} = useParams()
   const url = 'http://localhost:3000/recipes/' + id
-  const { data } = useFetch(url)
-  console.log(data);
+  const { data, isPending, error } = useFetch(url)
   return (
     <div className='recipe'>
+    {isPending && <div>Loading...</div>}  
+      { error && <div>{ error }</div>}
       { data && <div>
         <h3>{ data.title }</h3>      
       <ul>
