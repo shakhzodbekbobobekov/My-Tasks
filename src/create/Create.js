@@ -1,6 +1,7 @@
 import './Create.css';
-import { useState } from 'react'
-import {useFetch} from '../components/hooks/useFetch'
+import { useEffect, useState } from 'react'
+import { useFetch } from '../components/hooks/useFetch'
+import {useNavigate} from 'react-router-dom'
 
 function Create() {
   const [title, setTitle] = useState('')
@@ -8,12 +9,19 @@ function Create() {
   const [cookingTime, setCookingTime] = useState('')
   const [newIngredient, setNewIngredient] = useState('')
   const [ingredients, setNewIngredients] = useState([])
-  const { data, isPending, error, postData } = useFetch('http://localhost:3000/recipes', 'POST')
+  const { data, isPending, postData } = useFetch('http://localhost:3000/recipes', 'POST')
   
   const handleForm = (e) => {
     e.preventDefault()
     postData({title, method, cookingTime, ingredients})
   }
+
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (data && data.title === title) {
+      navigate('/')
+    }
+  }, [data, navigate, title])
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -26,7 +34,7 @@ function Create() {
   return (
     <form onSubmit={ handleForm } className='create'>
       {isPending && <div>Loading....</div>}
-      { error && <div>{error }</div>}
+      {/* { error && <div>{error }</div>} */}
       <label>
         <span>Title:</span>
         <input type="text" required onChange={(e)=> setTitle(e.target.value)}  value={title}/>
