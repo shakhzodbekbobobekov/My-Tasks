@@ -4,16 +4,16 @@ export const useFetch = (url, method = 'GET') => {
 	const [data, setData] = useState(null)
 	const [isPending, setIsPending] = useState(false)
 	const [error, setError] = useState(null)
-	const [ options, setOptions ] = useState(null)
+	const [ options, setOption ] = useState(null)
 	// options return qilmasak sababi postDataga solinob keyin ketyaptida
 	
 	const postData = (postData) => {
-		setOptions({
+		setOption({
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(postData),
+      		headers: {
+        	'Content-Type': 'application/json',
+      			},
+      		body: JSON.stringify(postData),
 		})
 	}
 

@@ -11,9 +11,9 @@ function RicipeList({data}) {
           <div className='card' key={recipe.id}>
             <h3>{ recipe.title }</h3>
             <p>{ recipe.ingredients }</p>
-            <div>{ recipe.method.substring(0,50) }..</div>
+            <p>{ recipe.method.substring(0,50)}..</p>
             <Link to={`/recipe/${recipe.id}`}>Read More</Link>
-          </div>
+          </div>              
         )
       })}
     </div>
