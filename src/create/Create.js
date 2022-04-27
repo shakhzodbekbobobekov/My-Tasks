@@ -8,9 +8,8 @@ function Create() {
   const [newIngredient, setNewIngredient] = useState('')
   const [ingredients, setNewIngredients] = useState([])
   
-  const hanleForm = (e) => {
+  const handleForm = (e) => {
     e.preventDefault()
-    console.log(title, method, cookingTime);
   }
 
   const handleClick = (e) => {
@@ -18,31 +17,42 @@ function Create() {
     if (newIngredient && !ingredients.includes(newIngredient)) {
       setNewIngredients((prev)=> [...prev,newIngredient])
     }
+    setNewIngredient('')
   }
 
   return (
-    <form onSubmit={hanleForm} className='create'>
+    <form onSubmit={handleForm} className='create'>
       <label>
         <span>Title:</span>
-        <input type="text" required onChange={(e)=> setTitle(e.target.value)} />
+        <input type="text" required onChange={(e)=> setTitle(e.target.value)}  value={title}/>
       </label>
 
        <label>
         <span>Ingredients:</span>
         <div className='ingredients'>
-          <input required type="text" onChange={(e) => setNewIngredient(e.target.value) } />
+          <input type="text" onChange={(e) => setNewIngredient(e.target.value) }  value={newIngredient}/>
         <button onClick={handleClick}>Add</button>
         </div>
+        <p>
+          <strong>Ing: </strong>
+          {
+            ingredients.map((ing) => {
+              return (
+                <small key={ing}>{ing }, </small>
+              )
+            })
+          }
+        </p>
       </label>
 
       <label>
         <span>Method:</span>
-        <textarea required onChange={(e)=> setMethod(e.target.value)}></textarea>
+        <textarea required onChange={(e)=> setMethod(e.target.value)} value={method} ></textarea>
       </label>
 
       <label>
         <span>Cooking Time:</span>
-        <input type="number" required onChange={(e)=> setCookingTime(e.target.value)} />
+        <input type="number" required onChange={(e)=> setCookingTime(e.target.value)}  value={cookingTime} />
       </label>
 
       <button>Submit</button>
