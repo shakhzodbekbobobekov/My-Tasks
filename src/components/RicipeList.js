@@ -12,7 +12,7 @@ function RicipeList({data}) {
             <h3>{ recipe.title }</h3>
             <p>{ recipe.ingredients }</p>
             <div>{ recipe.method.substring(0,50) }..</div>
-            <Link to='/'>Read More</Link>
+            <Link to={`/recipe/${recipe.id}`}>Read More</Link>
           </div>
         )
       })}
