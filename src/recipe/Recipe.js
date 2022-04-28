@@ -8,19 +8,24 @@ function Recipe() {
   const { data, isPending, error } = useFetch(url)
   return (
     <div className='recipe'>
-    {isPending && <div>Loading...</div>}  
-      { error && <div>{ error }</div>}
+      {isPending && <div>Loading...</div>}  
+      { error && <div>{ error }</div> }
+      
       { data && <div>
         <h3>{ data.title }</h3>      
-      <ul>
+      {/* <ul> */}
         {
           data.ingredients.map((ing) => {
             return (
-              <li key={ing}>{ing }, " "</li>
+              <span key={ ing }>
+                <small>
+                  {ing}, 
+                </small>
+              </span>
             )
           })   
         }
-      </ul>
+      {/* </ul> */}
       <p>{ data.method }</p>
       <br/>
       <h3>{ data.cookingTime }</h3>

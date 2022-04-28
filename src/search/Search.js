@@ -10,15 +10,18 @@ export default function Search() {
   const queryString = new URLSearchParams(useParams)
   const getParams = queryString.get('q')
   const url = 'http://localhost:3000/recipes?q=' + getParams
-  const { data, error, isPending } = useFetch(url)
-
+  const {data, isPending, error} = useFetch(url)
+  
   return (
     <div>
-      <h2 className='page-title'>Recipe bor { getParams }</h2>
-      {isPending && <div>Loading.......</div>}
-      { error && <div>{ error }</div>}
-
+      <h2 className='page-title'>
+        Recipe which you are searching by name - {getParams}
+      </h2>
+      {isPending && <div>Loading...</div>}
+      { error && <div>{ error }</div> }
+      
       {data && <RicipeList data={data} />}
     </div>
   )
 }
+

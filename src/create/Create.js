@@ -9,7 +9,7 @@ function Create() {
   const [cookingTime, setCookingTime] = useState('')
   const [newIngredient, setNewIngredient] = useState('')
   const [ingredients, setNewIngredients] = useState([])
-  const { data, isPending, postData } = useFetch('http://localhost:3000/recipes', 'POST')
+  const { data, isPending, error, postData } = useFetch('http://localhost:3000/recipes', 'POST')
   
   const handleForm = (e) => {
     e.preventDefault()
@@ -34,7 +34,7 @@ function Create() {
   return (
     <form onSubmit={ handleForm } className='create'>
       {isPending && <div>Loading....</div>}
-      {/* { error && <div>{error }</div>} */}
+      { error && <div>{error }</div>}
       <label>
         <span>Title:</span>
         <input type="text" required onChange={(e)=> setTitle(e.target.value)}  value={title}/>

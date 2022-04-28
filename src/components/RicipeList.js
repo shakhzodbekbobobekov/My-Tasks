@@ -1,9 +1,12 @@
-''
 
 import './RicipeList.css'
 import { Link } from 'react-router-dom'
 
-function RicipeList({data}) {
+function RicipeList({ data }) {
+  if (data.length === 0) {
+    return <div className='error' > No recipe by this name </div>
+  }
+
   return (
     <div className='recipe-list'>
       { data && data.map((recipe) => {
