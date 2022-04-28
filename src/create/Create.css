@@ -31,3 +31,11 @@
 .ingredients button {
   margin: 0 0 0 10px;
 }
+
+@media(min-width: 0px) and (max-width: 530px) {
+  .create {
+    max-width: 530px;
+    width: 80%;
+    margin: auto;
+  }
+}

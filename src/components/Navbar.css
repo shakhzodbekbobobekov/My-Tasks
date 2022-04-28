@@ -26,3 +26,20 @@
   background: #fff;
   color: #333;
 }
+
+@media(min-width: 0px) and (max-width: 550px) {
+  .navbar {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .navbar a:last-child {
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin-right: 20px;
+  }
+}

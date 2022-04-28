@@ -16,7 +16,7 @@ function Recipe() {
         {
           data.ingredients.map((ing) => {
             return (
-              <li key={ing}>{ing }</li>
+              <li key={ing}>{ing }, " "</li>
             )
           })   
         }
