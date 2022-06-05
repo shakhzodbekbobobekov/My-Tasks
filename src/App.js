@@ -1,26 +1,29 @@
-import './App.css'
+import "./App.css";
 
-import Home from './home/Home'
-import Create from './create/Create'
-import Recipe from './recipe/Recipe'
-import Navbar from './components/Navbar'
-import Search from './search/Search'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from "./home/Home";
+import Create from "./create/Create";
+import Recipe from "./recipe/Recipe";
+import Navbar from "./components/Navbar";
+import Search from "./search/Search";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useTodos } from "./components/hooks/useTodos";
 
 function App() {
+  const data = useTodos();
+  console.log(data);
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
         <Navbar />
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/create' element={<Create />} />
-          <Route path='/recipe/:id' element={<Recipe />} />
-          <Route path='/search' element={<Search />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

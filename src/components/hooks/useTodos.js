@@ -1,7 +1,8 @@
-import React from "react";
+import { TodosContext } from "../../context/TodosContext";
+import { useContext } from "react";
 
-function useTodos() {
-  return <div>useTodos</div>;
-}
+export const useTodos = () => {
+  const context = useContext(TodosContext);
 
-export default useTodos;
+  return context;
+};
