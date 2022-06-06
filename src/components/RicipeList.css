@@ -52,6 +52,15 @@
   filter: invert(60%);
 }
 
+.delete img {
+  transition: 0.2s all linear;
+}
+
+.delete img:hover {
+  transform: rotateZ(10deg);
+  opacity: 0.5;
+}
+
 /* dark mode */
 .recipe-list .card.dark {
   background: #555;
