@@ -5,7 +5,6 @@ import { projectFirestore } from "../components/firebase/config";
 const deleteRecipe = (id) => {
   projectFirestore.collection("recipes").doc(id).delete();
 };
-
 function RicipeList({ data }) {
   return (
     <div className="recipe-list">
