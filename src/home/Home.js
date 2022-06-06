@@ -4,17 +4,28 @@ import { projectFirestore } from "../components/firebase/config";
 import { useState, useEffect } from "react";
 
 function Home() {
-  // const { data, isPending, error } = projectFirestore()
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
   useEffect(() => {
+    setIsPending(true);
+
     projectFirestore
       .collection("recipes")
       .get()
-      .then((snopshot) => {
-        console.log(snopshot);
+      .then((snapshot) => {
+        if (snapshot.empty) {
+          setError("No recipe to yet !");
+          setIsPending(false);
+        } else {
+          const results = [];
+          snapshot.docs.forEach((doc) => {
+            results.push({ ...doc.data(), id: doc.id });
+          });
+          setData(results);
+          setIsPending(false);
+        }
       });
   }, []);
 

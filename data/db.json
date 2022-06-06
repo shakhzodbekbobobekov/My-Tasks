@@ -36,6 +36,22 @@
       ],
       "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
       "cookingTime": "35 minutes"
+    },
+    {
+      "title": "Shurva",
+      "method": "Juda yaxshi ovqat",
+      "cookingTime": "2",
+      "ingredients": [
+        "tuz",
+        "gusht",
+        "yog",
+        "suv",
+        "piyoz",
+        "kartoshka",
+        "savzi",
+        "...."
+      ],
+      "id": "_r9gwUA"
     }
   ]
 }

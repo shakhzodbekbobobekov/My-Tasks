@@ -10,7 +10,6 @@ import { useTodos } from "./components/hooks/useTodos";
 
 function App() {
   const data = useTodos();
-  console.log(data);
   return (
     <div className="App">
       <Router>
