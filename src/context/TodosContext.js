@@ -18,8 +18,6 @@ const useTodosContext = (state, action) => {
 export function TodosProvider({ children }) {
   const [state, dispatch] = useReducer(useTodosContext, inintalTodos);
   return (
-    <TodosContext.Provider value={{ ...state }}>
-      {children}
-    </TodosContext.Provider>
+    <TodosContext.Provider value={[...state]}>{children}</TodosContext.Provider>
   );
 }
