@@ -6,14 +6,13 @@ import Recipe from "./recipe/Recipe";
 import Navbar from "./components/Navbar";
 import Search from "./search/Search";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useTodos } from "./components/hooks/useTodos";
-
+import ThemeSelector from "./components/ThemeSelector";
 function App() {
-  const data = useTodos();
   return (
     <div className="App">
       <Router>
         <Navbar />
+        <ThemeSelector />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
