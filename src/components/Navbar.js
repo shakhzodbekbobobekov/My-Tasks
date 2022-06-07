@@ -4,9 +4,15 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { TodosContext } from "../context/TodosContext";
 function Navbar() {
-  const { color } = useContext(TodosContext);
+  const { color, changeNavColor } = useContext(TodosContext);
   return (
-    <div className="navbar" style={{ background: color }}>
+    <div
+      className="navbar"
+      onClick={() => {
+        changeNavColor("red");
+      }}
+      style={{ background: color }}
+    >
       <nav>
         <Link to="/" className="brand">
           <h1>RATATOUILLE</h1>
