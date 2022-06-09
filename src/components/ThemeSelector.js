@@ -1,11 +1,20 @@
 import "./ThemeSelector.css";
-import { useTodos } from "../components/hooks/useTodos";
+import { useTheme } from "./hooks/useTheme";
+
 const navColors = ["#3BACB6", "#00FFAB", "#4B8673", "#FF8C8C"];
 
 function ThemeSelector() {
-  const { changeNavColor } = useTodos();
+  const { mode, changeMode, changeNavColor } = useTheme();
+
+  const changeDarkNote = () => {
+    changeMode(mode === "dark" ? "light" : "dark");
+  };
+
   return (
     <div className="theme-selector">
+      <div className="mode-toggle">
+        <img onClick={changeDarkNote} src="./assets/moon.svg" alt="" />
+      </div>
       <div className="theme-buttons">
         {navColors.map((color) => {
           return (
@@ -13,8 +22,8 @@ function ThemeSelector() {
               onClick={() => {
                 changeNavColor(color);
               }}
-              style={{ background: color }}
               key={color}
+              style={{ background: color }}
             ></div>
           );
         })}

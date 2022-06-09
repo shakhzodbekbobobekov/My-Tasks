@@ -1,6 +1,6 @@
-import { createContext, useReducer } from "react";
+import { useReducer, createContext } from "react";
 
-export const TodosContext = createContext();
+export const ThemeContext = createContext();
 
 const changeColor = (state, action) => {
   switch (action.type) {
@@ -13,7 +13,7 @@ const changeColor = (state, action) => {
   }
 };
 
-export function TodosProvider({ children }) {
+export function ThemeProvider({ children }) {
   const [state, dispatch] = useReducer(changeColor, {
     color: "#58249c",
     mode: "dark",
@@ -23,9 +23,13 @@ export function TodosProvider({ children }) {
     dispatch({ type: "CHANGE_COLOR", payload: color });
   };
 
+  const changeMode = (mode) => {
+    dispatch({ type: "CHANGE_MODE", payload: mode });
+  };
+
   return (
-    <TodosContext.Provider value={{ ...state, changeNavColor }}>
+    <ThemeContext.Provider value={{ ...state, changeNavColor, changeMode }}>
       {children}
-    </TodosContext.Provider>
+    </ThemeContext.Provider>
   );
 }

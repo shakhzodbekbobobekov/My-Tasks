@@ -7,9 +7,13 @@ import Navbar from "./components/Navbar";
 import Search from "./search/Search";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ThemeSelector from "./components/ThemeSelector";
+import { useTheme } from "./components/hooks/useTheme";
+
 function App() {
+  const { mode } = useTheme();
+  console.log(mode);
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       <Router>
         <Navbar />
         <ThemeSelector />

@@ -1,18 +1,12 @@
 import "./Navbar.css";
 import Searchbar from "./Searchbar";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { TodosContext } from "../context/TodosContext";
+import { useTheme } from "../components/hooks/useTheme";
+
 function Navbar() {
-  const { color, changeNavColor } = useContext(TodosContext);
+  const { color } = useTheme();
   return (
-    <div
-      className="navbar"
-      onClick={() => {
-        changeNavColor("red");
-      }}
-      style={{ background: color }}
-    >
+    <div className="navbar" style={{ background: color }}>
       <nav>
         <Link to="/" className="brand">
           <h1>RATATOUILLE</h1>

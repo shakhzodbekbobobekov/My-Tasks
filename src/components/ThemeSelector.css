@@ -14,3 +14,13 @@
     margin-left: 15px;
     border-radius: 50%;
 }
+
+.mode-toggle {
+    display: block;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.mode-toggle img {
+    width: 30px;
+}
